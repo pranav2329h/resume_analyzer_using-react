@@ -10,14 +10,17 @@ const Upload = () => {
     setFile(file)
 
   }
-  const handleSubmit =(e:FormEvent<HTMLFormElement>)
-  e.preventDefault();
+   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
   const form=e.currentTarget.closest('form');
   if(!form) return;
   const formData= new FormData(form);
   const companyName=formData.get('company-name');
-  const jobTtile=formData.get('company-name');
-  const companyName=formData.get('company-name');
+  const jobTitle=formData.get('job-title');
+  const jobDescription=formData.get('job-description');
+  console.log({
+    companyName, jobTitle, jobDescription, file
+  })
 
   }
 
@@ -68,6 +71,6 @@ const Upload = () => {
       </section>
     </main>
   );
-};
+}
 
 export default Upload;
